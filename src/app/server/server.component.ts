@@ -14,7 +14,7 @@ export class ServerComponent implements OnInit {
 
  */
 
-  nuevoServer: string = "block";
+  nuevoServer: string = "none";
   serverId: number = 10;
   serverStatus: string = 'FUNCIONANDO';
 
@@ -26,7 +26,11 @@ export class ServerComponent implements OnInit {
       ()=> {lógica en una sola línea}   
     
     */
-    setTimeout(() => this.nuevoServer="none",6000);
+    setTimeout(() => this.nuevoServer="block",3000);
+  }
+
+  boton1click(){
+    this.serverStatus="Cagaste";
   }
 
 
