@@ -1,0 +1,33 @@
+<!--DIRECTIVAS CON IF-->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>Ejemplo de Directiva</h3>
+            <input type="text" class="form-control" [(ngModel)]="textoInput" (change)="cambioEnTexto()">
+            <p class="mt-5" *ngIf="textoInput !==''">Has escrito en el input :{{textoInput}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="text-white ">Separador</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>Ejemplo de Directiva con if else + template</h3>
+            <button class="btn btn-danger" (click)="pulsarBoton1()">Botonazo</button>
+            <!--Elige con else el nombre del template-->
+            <p class="mt-5" *ngIf="boton1Pulsado; else sinBoton">Has pulsado el botonazo si pulsas te mostrare otra cosa
+            </p>
+        </div>
+    </div>
+</div>
+
+<!--
+    Crear un template con id = #nombreDeltemplate
+-->
+<ng-template #sinBoton>
+    <div class="warning">
+        <p class="mt-5 ">Has pulsado el botonazo , pulsa otra vez</p>
+    </div>
+</ng-template>
