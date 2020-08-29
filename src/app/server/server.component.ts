@@ -17,6 +17,8 @@ export class ServerComponent implements OnInit {
   nuevoServer: string = "none";
   serverId: number = 10;
   serverStatus: string = 'FUNCIONANDO';
+  serverResume: string;
+  counter: number = 1;
 
 
   ngOnInit(): void {
@@ -26,11 +28,13 @@ export class ServerComponent implements OnInit {
       ()=> {lógica en una sola línea}   
     
     */
-    setTimeout(() => this.nuevoServer="block",3000);
+    setTimeout(() => this.nuevoServer = "block", 3000);
   }
 
-  boton1click(){
-    this.serverStatus="Cagaste";
+  boton1click() {
+    this.serverStatus = "Cagaste";
+    this.counter = this.counter+1;
+    this.serverResume = 'cagaste potencia' + this.counter;
   }
 
 

@@ -1,9 +1,64 @@
-<p>server works con ID = {{serverId}} is {{serverStatus}}!</p>
-<!--USAR VARIABLES {{nombre variable}}-->
+<!--DataBinding sencillo para contenido de datos:
+    Para crear un databinding dencillo, basta con usar dentro del contenido html la variable entre los carácteres especiales, de esta
+    manera se mostrarán los datos que estén implementados en la lógica dentro de esa variable y cambiará dinámicamente en la vista
+-->
 <div class="container">
-    <!--Hacer binding de un atributo
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>Ejemplo de DataBinding sencillo {{serverId +" "+ serverStatus}} is {{serverStatus}}!</h3>
+        </div>
+    </div>
+</div>
+
+
+<div class="text-white ">Separador</div>
+
+<!--DataBinding de un atributo
         *forrma1
-            [nombre del atributo]="nombreVariable"
+            [nombre del atributo]="nombreVariable o código"
     -->
-    <button class="btn btn-primary" [style.display]="nuevoServer" (click)="boton1click()">Botonazo</button>
+<div class="container">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" [style.display]="nuevoServer">Botonazo</button>
+        </div>
+    </div>
+</div>
+
+<div class="text-white ">Separador</div>
+
+
+<!--DataBinding de un evento
+        *forrma1
+            (nombre del evento, click,mouseEnter...) ="nombreMétodo o código"
+    -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-12">
+                <button class="btn btn-primary" (click)="boton1click()">Botonazo</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="text-white ">Separador</div>
+
+
+<!--DataBinding doble:
+    Para crear un databinding doble se usa ngModel (para usarlo debe estar incluido en app.module.ts como:
+    "import { FormsModule } from '@angular/forms';"
+    Y declarado dentro de los imports
+    "FormsModule"
+    
+[(ngModel)]="nombre variable"-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>Ejemplo de DataBinding doble</h3>
+            <input type="text" class="form-control" [(ngModel)]="serverResume" placeHolder="hola">
+            <p>{{serverResume}}</p>
+        </div>
+    </div>
 </div>
