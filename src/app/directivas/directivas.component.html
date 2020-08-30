@@ -17,7 +17,8 @@
             <h3>Ejemplo de Directiva con if else + template</h3>
             <button class="btn btn-danger" (click)="pulsarBoton1()">Botonazo</button>
             <!--Elige con else el nombre del template-->
-            <p class="mt-5" *ngIf="boton1Pulsado; else sinBoton">Has pulsado el botonazo si pulsas te mostrare otra cosa
+            <p class="mt-5" *ngIf="boton1Pulsado; else sinBoton">Has pulsado el botonazo si pulsas te mostrare otra
+                cosa
             </p>
         </div>
     </div>
@@ -27,7 +28,41 @@
     Crear un template con id = #nombreDeltemplate
 -->
 <ng-template #sinBoton>
-    <div class="warning">
+    <div>
         <p class="mt-5 ">Has pulsado el botonazo , pulsa otra vez</p>
     </div>
 </ng-template>
+
+
+<!--Directivas para estilos con ngStyle que obedecen al valor de una variable o al resultado de una función-->
+<div [ngStyle]="{backgroundColor: colorFondo}" class="container mt-5">
+    <p class="mt-5 ">Directiva para cambio de estilo 1</p>
+</div>
+
+
+<div [ngStyle]="{backgroundColor: getColorFondo()}" class="container mt-5">
+    <p class="mt-5 ">Directiva para cambio de estilo 2</p>
+</div>
+
+
+<!--Directivas para estilos con ngStyle que obedecen al valor de una variable o al resultado de una función-->
+<div [ngClass]="getClase()" class="container mt-5">
+    <p class="mt-5 ">Directiva para cambio de clase</p>
+</div>
+
+
+<!--Directiva ngFor-->
+
+<div class="container mt-5">
+    <div class="row">
+        <button class="btn btn-danger" (click)="pulsarBoton2()">Botonazo</button>
+
+    </div>
+
+    <div *ngFor="let servers of serversArray" class="row">
+        <p>{{servers}}</p>
+    </div>
+
+
+
+</div>
