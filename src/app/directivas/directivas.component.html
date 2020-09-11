@@ -17,8 +17,7 @@
             <h3>Ejemplo de Directiva con if else + template</h3>
             <button class="btn btn-danger" (click)="pulsarBoton1()">Botonazo</button>
             <!--Elige con else el nombre del template-->
-            <p class="mt-5" *ngIf="boton1Pulsado; else sinBoton">Has pulsado el botonazo si pulsas te mostrare otra
-                cosa
+            <p class="mt-5" *ngIf="boton1Pulsado; else sinBoton">Has pulsado el botonazo si pulsas te mostrare otra cosa
             </p>
         </div>
     </div>
@@ -62,7 +61,6 @@
     <div *ngFor="let servers of serversArray" class="row">
         <p>{{servers}}</p>
     </div>
-
 
 
 </div>
